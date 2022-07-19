@@ -2,13 +2,16 @@
 
 <script>
     //options to choose from for the game
-    const rockPaperScissor = ['Rock', 'Paper', 'Scissors'];
+    const rockPaperScissor = ['rock', 'paper', 'scissors'];
 
     //randomly returns either "rock", "paper", or "scissors"
     function getComputerChoice() {
-        let computerChoice = rockPaperScissor[Math.floor(Math.random() * rockPaperScissor.length)];
-        return computerChoice;
+        let computerSelection = rockPaperScissor[Math.floor(Math.random() * rockPaperScissor.length)];
+        return computerSelection;
     }
     console.log(getComputerChoice());
 
+    const playerSelection = prompt("Rock, Paper, Scissors?");
+
+    console.log(playerSelection);
 </script>
