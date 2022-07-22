@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <script>
-    //options to choose from for the game
+    //options for computer to choose from
     const rockPaperScissor = ['rock', 'paper', 'scissors'];
 
     //randomly returns either "rock", "paper", or "scissors"
@@ -9,9 +9,22 @@
         let computerSelection = rockPaperScissor[Math.floor(Math.random() * rockPaperScissor.length)];
         return computerSelection;
     }
-    console.log(getComputerChoice());
 
+    //input for user to choose
     const playerSelection = prompt("Rock, Paper, Scissors?");
 
+    //making variable for playRound function to use below
+    const computerSelection = getComputerChoice();
+
+    //testing selection
+    console.log(computerSelection);
     console.log(playerSelection);
+
+    //     function playRound(playerSelection, computerSelection) {
+    //   // your code here!
+    // }
+
+
+    // console.log(playRound(playerSelection, computerSelection));
+
 </script>
