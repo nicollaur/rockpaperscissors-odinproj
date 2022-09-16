@@ -33,9 +33,9 @@
 //     console.log("It's a tie?!");
 // }
 
-let rockBtn = document.querySelector("#rock-el").addEventListener("click", playRound);
-let paperBtn = document.querySelector("#paper-el").addEventListener("click", playRound);
-let scissorsBtn = document.querySelector("#scissors-el").addEventListener("click", playRound);
+let rockBtn = document.querySelector("#rock-el");
+let paperBtn = document.querySelector("#paper-el");
+let scissorsBtn = document.querySelector("#scissors-el");
 let resultEl = document.querySelector("#result-el");
 let playerScoreEl = document.querySelector("#player-score-el");
 let computerScoreEl = document.querySelector("#computer-score-el");
@@ -45,30 +45,28 @@ const gameChoices = ["ROCK", "SCISSORS", "PAPER"];
 let playerScore = 0;
 let computerScore = 0;
 
+rockBtn.addEventListener("click", () => {
+    let playerChoice = "ROCK";
+    playRound(playerChoice);
+});
+
+paperBtn.addEventListener("click", () => {
+    let playerChoice = "PAPER";
+    playRound(playerChoice);
+});
+
+scissorsBtn.addEventListener("click", () => {
+    let playerChoice = "SCISSORS";
+    playRound(playerChoice);
+});
+
 function getComputerChoice() {
     return gameChoices[Math.floor(Math.random() * gameChoices.length)];
 };
 
-// function getPlayerChoice() {
 
-// };
-
-function playRound(e) {
-
+function playRound(playerChoice) {
     let computerChoice = getComputerChoice();
-    let playerChoice;
-
-    console.log(computerChoice);
-
-    if (e.target.id === "rock-el") {
-        playerChoice = "ROCK";
-    } else if (e.target.id === "paper-el") {
-        playerChoice = "PAPER";
-    } else {
-        playerChoice = "SCISSORS";
-    }
-
-    console.log(playerChoice);
 
     if (playerChoice === computerChoice) {
         resultEl.textContent = `${playerChoice} and ${computerChoice} make a tie!`;
@@ -94,6 +92,10 @@ function playRound(e) {
 
 function endGame() {
 
+    rockBtn.disabled = true;
+    paperBtn.disabled = true;
+    scissorsBtn.disabled = true;
+
     if (playerScore > computerScore) {
         finalScoreEl.textContent = `Player has ${playerScore} points! Computer has ${computerScore}!  Player wins!`;
     } else if (playerScore < computerScore) {
@@ -102,5 +104,3 @@ function endGame() {
         finalScoreEl.textContent = "It's a tie?!";
     }
 };
-
-// game();
