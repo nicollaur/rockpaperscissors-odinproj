@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+}
+
+#result-el {
+    margin-top: 30px;
+}
+
+#scoring-el {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+#final-score-el {
+    margin-top: 30px;
+}
