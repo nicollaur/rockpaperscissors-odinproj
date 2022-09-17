@@ -97,9 +97,9 @@ function endGame() {
     scissorsBtn.disabled = true;
 
     if (playerScore > computerScore) {
-        finalScoreEl.textContent = `Player has ${playerScore} points! Computer has ${computerScore}!  Player wins!`;
+        finalScoreEl.textContent = `Player has ${playerScore}! Computer has ${computerScore}!  Player wins!`;
     } else if (playerScore < computerScore) {
-        finalScoreEl.textContent = `Player has ${playerScore} points! Computer has ${computerScore}!  Computer wins!`;
+        finalScoreEl.textContent = `Player has ${playerScore}! Computer has ${computerScore}!  Computer wins!`;
     } else {
         finalScoreEl.textContent = "It's a tie?!";
     }
